@@ -1,18 +1,16 @@
-package entidades;
+package atividade01;
 
-import enums.Atividade01_TipoVeiculo;
-
-public class Atividade01_Veiculo {
+public class Veiculo {
 
 	protected String placa;
 	protected String marca;
-	protected Atividade01_TipoVeiculo modelo;
+	protected TipoVeiculo modelo;
 	protected String horaEntrada;
 	protected String horaSaida;
 	
-	public Atividade01_Veiculo() {}
+	public Veiculo() {}
 	
-	public Atividade01_Veiculo(String placa, String marca, Atividade01_TipoVeiculo modelo, String horaEntrada, String horaSaida) {
+	public Veiculo(String placa, String marca, TipoVeiculo modelo, String horaEntrada, String horaSaida) {
 		super();
 		this.placa = placa;
 		this.marca = marca;
@@ -37,11 +35,11 @@ public class Atividade01_Veiculo {
 		this.marca = marca;
 	}
 
-	public Atividade01_TipoVeiculo getModelo() {
+	public TipoVeiculo getModelo() {
 		return modelo;
 	}
 
-	public void setModelo(Atividade01_TipoVeiculo modelo) {
+	public void setModelo(TipoVeiculo modelo) {
 		this.modelo = modelo;
 	}
 

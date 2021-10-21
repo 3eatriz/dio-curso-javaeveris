@@ -1,23 +1,53 @@
-package entidades;
+package atividade01;
 
-import enums.Atividade01_TipoVeiculo;
-
-public class Atividade01_Estacionamento {
+public class Estacionamento {
 	
 	private Double valorHora;
 	private double totalFaturamento;
 	private int horasPassadas;
 	private int minutosPassados;
 	
-	Atividade01_Veiculo veiculo = new Atividade01_Veiculo();
+	Veiculo veiculo = new Veiculo();
 	
-	public Atividade01_Estacionamento() {}
+	public Estacionamento() {}
 	
-	public Atividade01_Estacionamento(Double valorHora, Atividade01_Veiculo veiculo) {
+	public Estacionamento(Double valorHora, Veiculo veiculo) {
 		this.valorHora = valorHora;
 		this.veiculo = veiculo;
 	}
-	
+
+	public Double getValorHora() {
+		return valorHora;
+	}
+
+	public void setValorHora(Double valorHora) {
+		this.valorHora = valorHora;
+	}
+
+	public double getTotalFaturamento() {
+		return totalFaturamento;
+	}
+
+	public void setTotalFaturamento(double totalFaturamento) {
+		this.totalFaturamento = totalFaturamento;
+	}
+
+	public int getHorasPassadas() {
+		return horasPassadas;
+	}
+
+	public void setHorasPassadas(int horasPassadas) {
+		this.horasPassadas = horasPassadas;
+	}
+
+	public int getMinutosPassados() {
+		return minutosPassados;
+	}
+
+	public void setMinutosPassados(int minutosPassados) {
+		this.minutosPassados = minutosPassados;
+	}
+
 	//Calcula o tempo que o veiculo ficou estacionado separando por hora e minuto
 	private void calcularTempo() {
 		//calculo da hora entrada
@@ -80,10 +110,10 @@ public class Atividade01_Estacionamento {
 			valor = 0;
 		}
 		
-		if(veiculo.modelo == Atividade01_TipoVeiculo.CARRO) {
+		if(veiculo.modelo == TipoVeiculo.CARRO) {
 			totalFaturamento = valor;
 		}
-		else if(veiculo.modelo == Atividade01_TipoVeiculo.MOTO) {
+		else if(veiculo.modelo == TipoVeiculo.MOTO) {
 			totalFaturamento = valor - valor*0.15;
 		}
 		else {

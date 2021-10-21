@@ -1,12 +1,8 @@
-package aplicacao;
+package atividade01;
 
 import java.util.Scanner;
 
-import entidades.Atividade01_Estacionamento;
-import entidades.Atividade01_Veiculo;
-import enums.Atividade01_TipoVeiculo;
-
-public class Atividade01 {
+public class Principal {
 
 	public static void main(String[] args) {
 		Scanner leia = new Scanner(System.in);
@@ -28,7 +24,7 @@ public class Atividade01 {
 		String horaEntrada = leia.next();	
 		
 		boolean repita;
-		Atividade01_TipoVeiculo modeloEnum = null;
+		TipoVeiculo modeloEnum = null;
 		
 		//Estrutura de repetição usada para caso o usuário errar na hora de escolher o tipo do veículo
 		do {
@@ -37,13 +33,13 @@ public class Atividade01 {
 			String modelo = leia.next();
 			
 			if(modelo.equalsIgnoreCase("carro")) {
-				modeloEnum = Atividade01_TipoVeiculo.CARRO;
+				modeloEnum = TipoVeiculo.CARRO;
 			}
 			else if(modelo.equalsIgnoreCase("moto")) {
-				modeloEnum = Atividade01_TipoVeiculo.MOTO;
+				modeloEnum = TipoVeiculo.MOTO;
 			}
 			else if(modelo.equalsIgnoreCase("utilitario")) {
-				modeloEnum = Atividade01_TipoVeiculo.UTILITARIO;
+				modeloEnum = TipoVeiculo.UTILITARIO;
 			}
 			else {
 				System.out.println("Informe um tipo válido de veículo!");
@@ -56,7 +52,7 @@ public class Atividade01 {
 		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-| SAÍDA DO CLIENTE |-=-=-=-=-=-=-=-=-=-=-=-");
 		System.out.print("Informe a hora da saída (hh:mm): ");
 		String horaSaida = leia.next();
-		Atividade01_Estacionamento veiculoEstacionado = new Atividade01_Estacionamento(valorHora, new Atividade01_Veiculo(placa, marca, modeloEnum, horaEntrada, horaSaida));
+		Estacionamento veiculoEstacionado = new Estacionamento(valorHora, new Veiculo(placa, marca, modeloEnum, horaEntrada, horaSaida));
 		String placa2;
 		
 		//Estrutura de repetição usada para caso o usuário errar a placa do carro estacionado
